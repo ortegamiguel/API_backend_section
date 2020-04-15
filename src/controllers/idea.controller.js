@@ -44,7 +44,7 @@ class IdeaController {
 
     async downvoteIdea(req, res){
         const {ideaId} = req.params;
-        const idea = await _ideaService.downvoteIdea(ideaId);
+        const idea = await _ideaService.downVoteIdea(ideaId);
         return res.send(idea);
     }
 

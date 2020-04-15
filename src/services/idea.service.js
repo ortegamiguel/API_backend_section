@@ -19,7 +19,7 @@ class IdeaService extends BaseService {
     }
 
     async upvoteIdea(ideaId){
-        if(!author){
+        if(!ideaId){
             const error = new Error();
             error.status = 400;
             error.message = 'ideaId must be sent';
@@ -40,7 +40,7 @@ class IdeaService extends BaseService {
     }
 
     async downVoteIdea(ideaId){
-        if(!author){
+        if(!ideaId){
             const error = new Error();
             error.status = 400;
             error.message = 'ideaId must be sent';
@@ -55,7 +55,7 @@ class IdeaService extends BaseService {
             throw error;
         }
 
-        idea.upvotes.push(false);
+        idea.downvotes.push(false);
 
         return await _ideaRepository.update(ideaId, { downvotes: idea.downvotes });
     }
