@@ -10,6 +10,8 @@ class Server {
     }
 
     start(){
+        console.log('PORT', process.env.PORT);
+        console.log('PORT 2', _config.PORT);
         return new Promise(resolve => {
             console.log('pasa por aqui');
             _express.listen(process.env.PORT, () => {
