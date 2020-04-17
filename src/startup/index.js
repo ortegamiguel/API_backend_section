@@ -10,12 +10,8 @@ class Server {
     }
 
     start(){
-        console.log('PORT', process.env.PORT);
-        console.log('PORT 2', _config.PORT);
         return new Promise(resolve => {
-            console.log('pasa por aqui');
-            _express.listen(process.env.PORT, () => {
-                console.log('pasa por aquisasa');
+            _express.listen(_config.PORT, () => {
                 console.log(`${_config.APPLICATION_NAME} API running on port ${_config.PORT}`)        
             });
             resolve();
